@@ -1,0 +1,34 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Customers/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7281
+        }
+      ],
+
+      "UpstreamPathTemplate": "/apigateway/CustomerService/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Products/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7098
+        }
+      ],
+
+      "UpstreamPathTemplate": "/apigateway/ProductService/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7056"
+  }
+
+}
